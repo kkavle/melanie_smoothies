@@ -32,29 +32,6 @@ if time_to_insert:
     session.sql(my_insert_stmt).collect();
     st.success('Your Smoothie is order!')
 
-
-
-# session.sql(INSERT INTO smoothies.public.orders_list (ingredients)
-#   SELECT ARRAY_CONSTRUCT(12, 'twelve', NULL); )
-
-#Contact Method
-# option = st.selectbox(
-#     'How would you like to be contacted', 
-#     ('Email', 'Home Phone', 'Mobile Phone'),
-#     index=0, 
-#     # format_func=special_internal_function, 
-#     # key=None, help=None, on_change=None, args=None, kwargs=None,
-#     # placeholder="Choose an option", disabled=False, 
-#     label_visibility="visible")
-
-
-# option = st.selectbox(
-#     'What is yuor favorite fruit?', 
-#     ('Strawberries', 'Banana', 'Peaches'),
-#     index=0, 
-#     # format_func=special_internal_function, 
-#     # key=None, help=None, on_change=None, args=None, kwargs=None,
-#     # placeholder="Choose an option",# disabled=False, 
-#     label_visibility="visible")
-
-# st.write('You selected:', option)
+import requests
+smoothiefroot_response = requests.get("https://smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
