@@ -27,10 +27,10 @@ if ingredients_list:
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients)
                 values ('""" + ingredients_string + """')"""
 
-# st.write(my_insert_stmt)
-if time_to_insert:
-    session.sql(my_insert_stmt).collect();
-    st.success('Your Smoothie is order!')
+    # st.write(my_insert_stmt)
+    if time_to_insert:
+        session.sql(my_insert_stmt).collect();
+        st.success('Your Smoothie is order!')
 
 import requests
 smoothiefroot_response = requests.get("https://smoothiefroot.com/api/fruit/watermelon")
